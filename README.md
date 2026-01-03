@@ -1,2 +1,2 @@
-# TrackerDroid
-A persistent PC tracker, just in case my laptop ever gets stolen.
+# Pc Tracker
+A persistent Windows computer tracker, just in case my laptop ever gets stolen.
