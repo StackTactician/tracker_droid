@@ -43,9 +43,8 @@ def get_location_data():
 def get_address_from_coords(lat, lng):
     """Reverse geocode coordinates to address."""
     session = requests.Session()
-    session.headers.update({'User-Agent': 'WindowsTracker/1.0'})
+    session.headers.update({'User-Agent': 'Boyscout/1.0'})
     
-    # Try OpenCage first
     if OPENCAGE_API_KEY and not OPENCAGE_API_KEY.startswith("YOUR_"):
         try:
             url = f"https://api.opencagedata.com/geocode/v1/json?q={lat}+{lng}&key={OPENCAGE_API_KEY}"
@@ -57,7 +56,6 @@ def get_address_from_coords(lat, lng):
         except Exception as e:
             logging.error(f"OpenCage geocoding failed: {e}")
     
-    # Try LocationIQ
     if LOCATIONIQ_API_KEY and not LOCATIONIQ_API_KEY.startswith("YOUR_"):
         try:
             url = f"https://us1.locationiq.com/v1/reverse.php?key={LOCATIONIQ_API_KEY}&lat={lat}&lon={lng}&format=json"
@@ -69,7 +67,6 @@ def get_address_from_coords(lat, lng):
         except Exception as e:
             logging.error(f"LocationIQ geocoding failed: {e}")
     
-    # Fallback to Nominatim (free, no API key)
     try:
         url = f"https://nominatim.openstreetmap.org/reverse?format=json&lat={lat}&lon={lng}"
         response = session.get(url, timeout=5)
