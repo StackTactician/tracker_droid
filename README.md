@@ -1,4 +1,4 @@
-# Windows Tracker
+# Boyscout
 
 A Telegram-based location tracker for Windows. Get your device's location via simple bot commands.
 
@@ -14,13 +14,13 @@ A Telegram-based location tracker for Windows. Get your device's location via si
 ## Project Structure
 
 ```
-Tracker/
+Boyscout/
 ├── main.py              # Entry point
 ├── config.py            # Your private API keys (gitignored)
 ├── config.example.py    # Template for users
 ├── requirements.txt     # Dependencies
 ├── README.md
-└── tracker/             # Core package
+└── boyscout/           # Core package
     ├── __init__.py
     ├── bot.py           # Telegram handlers
     ├── device.py        # Device info utilities

